@@ -1,0 +1,32 @@
+<?php
+/**
+ * @category    Fishpig
+ * @package     Fishpig_Wordpress
+ * @license     http://fishpig.co.uk/license.txt
+ * @author      Ben Tideswell <help@fishpig.co.uk>
+ */
+?>
+<?php
+
+	$product = Mage::getModel('catalog/product');
+	
+	if ($this->getProductSku() && !$this->getProductId()) {
+		$this->setProductId($product->getResource()->getIdBySku($this->getProductSku()));
+	}
+	
+	$product->load($this->getProductId());
+
+	if (!$product->getId()) {
+		return;
+	}
+
+	if (!$this->getHeaderLevel()) {
+		$this->setHeaderLevel(3);
+	}
+
+?>
+<div id="product-shortcode-<?php echo $product->getId() ?>" class="product-shortcode">
+	<h<?php echo $this->getHeaderLevel() ?>><a href="<?php echo $product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>"><?php echo $this->escapeHtml($product->getName()) ?></a></h<?php echo $this->getHeaderLevel() ?>>
+	<img src="<?php echo $this->helper('catalog/image')->init($product, 'image')->constrainOnly(true)->resize(200, 200) ?>" alt="<?php echo $this->escapeHtml($product->getName()) ?>"/>
+	<p><?php echo nl2br($this->stripTags($product->getShortDescription())) ?></p>
+</div>

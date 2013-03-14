@@ -1,0 +1,336 @@
+##
+# Fishpig's WordPress Integration for Magento eCommerce
+#
+# Author:			    	 FishPig Limited (Ben Tideswell)
+# Documentation:	 http://fishpig.co.uk/wordpress-integration.html
+# Installation:		 	 http://fishpig.co.uk/wordpress-integration-setup.html
+##
+
+12/03/2013 - v2.5.0.5
+- Added support for WordPress custom menus. To create a custom menu, select Appearance > Menu's from the WP Admin. After creating your menu, select WordPress > Settings > Blog Settings > Menu from the Magento Admin to use it in Magento. Your WP Menu will be appended to your Magento top menu.
+
+11/03/2013 - v2.5.0.3
+- Fixed issue on product pager with associated posts
+
+11/03/2013 - v2.5.0.2
+- Small fix for comments block
+
+06/03/2013 - v2.5.0.1
+- Added new translations. The following locales are now available: en_CA, cs_CZ, da_DK, de_DE, en_CA, es_ES, fi_FI, fr_FR, he_IL, hr_HR, id_ID, it_IT, ja_JP, ko_KR, nb_NO, nl_NL, nn_NO, pl_PL, pt_BR, pt_PT, ru_RU, sk_SK, sl_SI, sr_RS, sv_SE, tr_TR and  zh_CN
+
+28/02/2013 - v2.5.0.0
+- Removed resource model hack, which means the extension no longer supports Magento 1.5.*
+
+27/02/2013 - v2.4.99
+- Hidden associations tabs when entity has not been created
+- Fixed WordPress SEO bug that stopped post meta keywords from dispaying
+
+25/02/2013 - v2.4.98
+- Minor code adjustments
+- Fixed %post_id% in permalink issue
+
+25/02/2013 - v2.4.97
+- Added getAltText() method to image model
+- Improved blog search to include posts and pages
+
+21/02/2013 - v2.4.96
+- Small fix for Custom Post Types add-on
+
+20/02/2013 - v2.4.95
+- Added translations for Norwegian (nb_NO and nn_NO), Portuguese, Brazilian, Russian, Czech and Swedish
+
+19/02/2013 - v2.4.94
+- Fixed some translation issues
+- Modified comments system to use more native WP functionality. Also added external JS comments file
+
+19/02/2013 - v2.4.93
+- Fixed issue with images on Multisite
+
+16/02/2013 - v2.4.92
+- Fixed issue that stopped paged comments from working
+- Fixed comment posting issue when .htaccess isn't setup correctly
+- Added ability to use custom post types with addon
+- Cleaned up code (please report any bugs)
+- Added post list renderers. This may cause issues for people who have copied over wordpress.xml to their custom theme. To fix, you the new wordpress.xml
+
+08/02/2013 - v2.4.90
+- Added full translations for Chinese, Danish, Dutch, French and German, Italian, Polish, Japanese and Spanish. More to follow!
+
+04/02/2013 - v2.4.86
+- Added sku and header_level parameters to the product shortcode. Also added the constrainOnly setting to the image.
+
+25/01/2013 - v2.4.85
+- Fixed issue that stopped category terms order plugin from working
+- Added post date when empty (previewing)
+- Added small change to password protected posts redirecting to help fix the issue for some people that redirects to the blog homepage.
+- Fixed associations bug (cannot find tables wp_terms)
+
+25/01/2013 - v2.4.84
+- Small fix for Slick Social Buttons that stopped the buttons displaying on the blog homepage. Also fixed JS error regarding GA and tracking Facebook clicks
+- Fixed issue that stopped the comment form displaying when there were no comments on the post.
+- Improved isPluginEnabled to work better with WPMU
+
+22/01/2013 - v2.4.83
+- Change to resource hack to better support Enterprise users
+
+21/01/2013 - v2.4.81
+- Added option to show more posts per page
+- Cleaned up list wrapper abstract block, post list block and pager block
+- Modified Router.php so that the rewritten blog URL is used as the correct Magento URL
+
+18/01/2013 - v2.4.79
+- Small CSS file changes
+- Removed old association tables
+- Removed old entries from change-log.txt
+
+16/01/2013 - v2.4.78
+- Added AJAX comment functionality
+
+16/01/2013 - v2.4.77
+- Fixed multiple small bugs
+- Added option to add pager to posts sidebar widget when using the categoryposts.phtml template
+
+15/01/2013 - v2.4.76
+- Fixed issue that stopped AllInOneSEO from working
+
+13/01/2013 - v2.4.75
+- Added support for the Ultimate Category Excluder plugin
+
+11/01/2013 - v2.4.74
+- Improved Author getUrl method
+
+09/01/2013 - v2.4.72
+- Fixed issue with user_nicename / user_login
+- Improved Yoast sitemap support so that a Yoast sitemap that contains links to other sitemaps works
+
+09/01/2013 - v2.4.71
+- Removed sitemap functionality and added support for the Yoast XML Sitemap
+
+23/12/2012 - v2.4.70
+- Fixed issue that forced subcategories to not include parent category slug in URI
+- Fixed that issue that sometimes broke associations grid (item with id n already exists)
+
+16/12/2012 - v2.4.69
+- Fixed issue with YouTube shortcode that stopped the hide related videos parameter from working.
+- Improved system.xml comments
+
+15/12/2012 - v2.4.68
+- Change to Caption shortcode to allow for caption to be included (previously content added next to the image was treated as the caption)
+
+06/12/2012 - v2.4.67
+- Small event change to stop shortcodes being autop'd
+
+04/12/2012 - v2.4.66
+- Small change to allow filtering of users on Cimy UEF field.
+
+01/12/2012 - v2.4.65
+- Added support for CIMY User Extra Fields plugin
+
+29/11/2012 - v2.4.64
+- Added small fix for SlickSocialButtons block file
+- Improved display of integration results and help messages
+
+29/11/2012 - v2.4.63
+- Added option to config to disable autop
+
+28/11/2012 - v2.4.62
+- Added support for Yarpp Thumbnails view (this requires the latest beta version of YARPP)
+
+26/11/2012 - v2.4.61
+- Added new event for shortcodes. Existing events still work but all modules should make use of new event.
+- Add support for Contact Form 7
+
+17/11/2012 - v2.4.60
+- Added support for using NextGEN Gallery images as featured post images
+
+15/11/2012 - v2.4.59
+- Added better error handling for associations in Admin that will now show error message instead of redirect. This error is most likely caused by having WP and Magento in separate databases and your WP user not having SELECT access to the required association tables.
+
+09/11/2012 - v2.4.58
+- Added ability to ignore custom home page set in WordPress Admin. This is useful if you are using the WP site as a stand alone site (with a custom homepage) but still want your blog feed to be displaying on your integrated blog homepage
+
+09/11/2012 - v2.4.57
+- Small modifiation to getMetaValue to allow support for Advanced Custom Fields
+
+06/11/2012 - v2.4.56
+- Added support for ReciPress plugin
+- Improved term URL's and support for Custom Taxonomies
+
+06/11/2012 - v2.4.51
+- Fixed issue with associations tables
+- Fixed installation issue with Config helper
+
+30/10/2012 - v2.4.50
+- Fixed issue that caused associated admin pages to redirect to homepage. This issue only affected users who had WordPress and Magento installed in separate databases.
+
+26/10/2012 - v2.4.49
+- Fixed issue for Pinterest Feeds with only 1 pin
+
+25/10/2012 - v2.4.47
+- Added Auto-Login fix for Magento versions prior to 1.7.0.0
+
+24/10/2012 - v2.4.45
+- Added support for Pinterest RSS Widget Shortcode
+
+23/10/2012 - v2.4.43
+- Fixed install issue and dropped support for Magento 1.4
+
+23/10/2012 - v2.4.42
+- Improved RSS widget and added support for new Pinterest RSS Widget plugin
+
+23/10/2012 - v2.4.41
+- Refactored auto-login code
+- Added new options to auto-login menu
+- Removed Abstract Adminhtml controller and RedirectController
+- Added some extra features to the user model to work with CS 1.2.0.0
+- Added loginToWordPress method to System helper. 
+- Moved comment system back to WP. This means the Akismet plugin is now supported and will help protect your blog from spam.
+- Removed support for Recaptcha
+- Moved custom taxonomy system from extension
+- Deprecated the comment reply notification helper as the new comments system lets WordPress handle this
+- Rewritten association system and added CMS Page associations
+
+11/10/2012 - v2.4.39
+- Small router/controller updates
+- Added new events
+
+11/10/2012 - v2.4.38
+- Fixed issue with updating post comment issue (quoteInto issue)
+
+11/10/2012 - v2.4.37
+- Added better support for breadcrumbs features in WordPress (Yoast) SEO
+- Fixed comment count issue
+
+04/10/2012 - v2.4.35
+- Fixed issue with Yoast SEO
+
+03/10/2012 - v2.4.33
+- Moved WpCustomerSync to Fishpig_Wordpress_Addon_CS
+
+03/10/2012 - v2.4.32
+- Fixed issue with caption shortcodes when no image is set
+
+03/10/2012 - v2.4.31
+- Uploaded new version for Magento 1.4 (for the last few releases, Magento 1.4 could not download via Magento Connect)
+
+03/10/2012 - v2.4.29
+- Added a fix for Magento 1.5 users with auto-login
+
+01/10/2012 - v2.4.28
+- Added small change to work with Multisite extension, which has been moved to app/code/community/Fishpig/Wordpress/Addon/Multisite/
+
+01/10/2012 - v2.4.27
+- Added hack/fix so that Magento 1.5 users can use the extension even with the new Resource adapter system in place
+
+30/09/2012 - v2.4.25
+- Added author description to author view template
+- Moved AllInOneSEO from a Helper file to it's own module under Fishpig/Wordpress/Addon/AllInOneSEO
+- Removed link from 'Blog' breadcrumb when on blog homepage
+- Added support for the plugin WordPress SEO (Yoast SEO)
+
+28/09/2012 - v2.4.24
+- Fixed small issue that caued sidebar to be duplicated
+
+28/09/2012 - v2.4.23
+- Fixed issue in post comment when trying to URL without post being set
+
+28/09/2012 - v2.4.22
+- Rewrite of category/term system to allow for quicker loading
+- Added parent/child categories to system
+
+22/09/2012 - v2.4.21
+- Added layout update XML field to Magento config
+- Added wordpress_default handle to all WordPress pages by default via controller
+- Added more small changes to integrate better with BuddyPress Integration
+
+22/09/2012 - v2.4.20
+- Improved default WordPress gallery shortcode
+- Fix for auto-login that started in version 2.4.19
+
+21/09/2012 - v2.4.19
+- Updated resource models to new format
+- Improved ShareThis
+
+18/09/2012 - v2.4.18
+- Improved ShareThis and re-added icons to post list page
+- FIxed issue that broke having a static page as your blog homepage and posts on a page
+- Added route for wp-cron.php
+
+17/09/2012 - v2.4.17
+- Fixed issue on product pages with no related posts
+
+16/09/2012 - v2.4.16
+- Improved router response time and added Abstract router to help with BuddyPress Integration
+- Added Yarpp sidebar widget block to GIT repo
+- Added Next/Previous buttons to post view page
+
+15/09/2012 - v2.4.14
+- Added option to change top link position
+- Renamed getPrettyBlogRoute to getTopLinkLabel and deprecated getPrettyBlogRoute
+- Fixed issue with Yarpp and added support for Yarpp sidebar widget
+
+13/09/2012 - v2.4.12
+- Mulitple small improvements
+- Added CSS rules to new CSS file for aligmment and captions
+- Fixed caption issue that caused caption to be rendered outside of p tag
+- Moved caption shortcode over to new shortcode system
+
+11/09/2012 - v2.4.11
+- Added support for custom taxonomy's
+- Removed links from final breadcrumb
+- Major rewrite of all controllers
+- Improved template classes and structure.
+
+06/09/2012 - v2.4.10
+- Fixed issue with protected pages
+
+30/08/2012 - v2.4.9
+- Fixed issue that stopped comment success/error message from displaying
+- Added URL Routing fix for NextGEN Gallery
+
+28/08/2012 - v2.4.8
+- Added in old Opengraph helper to stop fatal errors
+
+24/08/2012 - v2.4.7
+- Fixed category URL structure so category used matches WordPress
+- Added new events to work with Custom Taxonomy's in post permalinks
+
+24/08/2012 - v2.4.6
+- Fixed pager issue
+
+24/08/2012 - v2.4.5
+- Removed the option to open WP Admin Auto-Login links in a new window or the same window. Links now open in a new window by default
+- Merged WordPress XML Sitemap into Magento XML Sitemap. Moved XML Sitemap options to System > Configuration > Catalog > Sitemap
+- Removed robots.txt value from extension configuration. Extension now uses WordPress path to load robots.txt from WordPress root and display it dynamically
+- Removed RSS options from the system configuration. RSS is now enabled by default.
+- Removed ShareThis from post list page
+- Cleaned out code
+- Removed option to display blog as Magento homepage
+- Moved widget declaration from layout XML file to config.xml
+
+23/08/2012 - v2.4.4
+- Added fix that allows you to enter absolute paths again
+- Added Opengraph helper in old location that extends the new one (deprecated)
+
+20/08/2012 - v2.4.3
+- Fixed issue that caused previewing a scheduled post to 404
+
+12/08/2012 - v2.4.2
+- Fixed issue that caused some posts to 404 when previewing
+- Added creator (user_nicename) field to the RSS feed
+
+12/08/2012 - v2.4.1
+- Fixed issue with post images
+
+11/08/2012 - v2.4.0
+- Revamp of database code and events to work better with BuddyPress Integration (currently in alpha testing)
+- Improved product meta description. All new lines and tabs have been removed, as well as JS
+- Fixed issue with WP No Category Base plugin and upgraded to WPML version
+- Cleaned AllinOneSeo Helper file
+- Moved Opengraph helper into plugins directory
+- Moved Recaptcha helper into plugins directory
+- Removed references to /db helper and updated getTableName calls
+- Added new meta system for posts and users
+- Fixed comments XSS issue
+- If No-Category Base installed, redirect old category URL to new category URL
+- Removed redundant controllers and merged actions into Misc controller
